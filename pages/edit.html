@@ -69,7 +69,7 @@
 			const changepass = document.querySelector("#changepass")
 			const confirmpass = document.querySelector("#confirmpass")
 			
-			if (changepass.value!=confirmpass.value){
+			if (changepass.value!=confirmpass.value||(!changepass.value||!confirmpass.value)){
 				alert('password do not match')
 			} else {
 				let text = `Saved edit: \nFirst name: ${fname.name}\nMiddle inital: ${mname.name}\nLast name: ${lname.value}\nStreet no. ${street.value}\nAddress State: ${state.value}\nAddress up: ${address.value}`
