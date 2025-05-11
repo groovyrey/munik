@@ -60,7 +60,21 @@
 	<script>
 		
 		function submit (){
+			const fname = document.querySelector("#fname")
+			const mname = document.querySelector("#mname")
+			const lname = document.querySelector("#lname")
+			const street = document.querySelector("#street")
+			const state = document.querySelector("#state")
+			const address = document.querySelector("#address")
+			const changepass = document.querySelector("#changepass")
+			const confirmpass = document.querySelector("#confirmpass")
 			
+			if (changepass.value!=confirmpass.value){
+				alert('password do not match')
+			} else {
+				let text = `Saved edit: \nFirst name: ${fname.name}\nMiddle inital: ${mname.name}\nLast name: ${lname.value}\nStreet no. ${street.value}\nAddress State: ${state.value}\nAddress up: ${address.value}`
+				alert(text)
+			}
 		}
 		
 	</script>
@@ -84,11 +98,11 @@
 		<label>Address State: </label>
 		<input id="state" type="text">
 		<label>Address up: </label>
-  <input id="name" type="text">
+  <input id="address" type="text">
   <label>Change password: </label>
-<input id="name" type="text">
+<input id="changepass" type="password">
 <label>Confirm password: </label>
-<input id="name" type="text">
+<input id="confirmpass" type="password">
 		<button onclick="submit()">Save <span class="bi-send-fill"></span></button>
 	</div>
 </body>
