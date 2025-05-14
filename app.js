@@ -6,7 +6,8 @@ const people = {
   "Regie": [5, 3],
   "Jedrick": [1, 8],
   "Alex": [0, 3],
-  "Eljay": [4, 4]
+  "Eljay": [4, 4],
+  "Rey": [3,6]
 };
 
 // Sort the processes based on arrival time (FCFS)
@@ -32,11 +33,14 @@ function GanttChart({ results }) {
       <h3>Gantt Chart</h3>
       <div className="d-flex align-items-center">
         {results.map((res, index) => (
-          <div key={index} className="p-2 border bg-primary text-white me-2">
-            {res.name} ({res.start} - {res.finish})
+          <div key={index} className="card p-2 border bg-primary text-white me-2">
+            {res.name}
+            <hr></hr>
+            {res.start} - {res.finish}
           </div>
         ))}
       </div>
+      <hr></hr>
     </div>
   );
 }
@@ -45,6 +49,7 @@ function Main() {
   return (
     <div className="container mt-5">
     	<h1 className="text-center">First Come First Serve Scheduling</h1>
+    	<hr></hr>
        <table className="table table-secondary mt-4">
         <thead className="table-dark">
           <tr>
@@ -63,7 +68,9 @@ function Main() {
           ))}
         </tbody>
       </table>
+      
       <h1 className="text-center">Results: </h1>
+      <hr></hr>
       <table className="table table-secondary mt-4">
         <thead className="table-dark">
           <tr>
@@ -88,7 +95,6 @@ function Main() {
           ))}
         </tbody>
       </table>
-
       <GanttChart results={results} />
     </div>
   );
