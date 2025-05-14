@@ -6,8 +6,7 @@ const people = {
   "Regie": [5, 3],
   "Jedrick": [1, 8],
   "Alex": [0, 3],
-  "Eljay": [4, 4],
-  "Rey": [3,6]
+  "Eljay": [4, 4]
 };
 
 // Sort the processes based on arrival time (FCFS)
