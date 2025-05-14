@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 const initialPeople = {
-  "Alex": [2, 6],
-  "Jasper": [5, 3],
-  "Jedrick": [1, 8],
-  "Regie": [0, 3],
-  "Eljay": [4, 4]
+  "Jhon": [0, 20],
+  "Emma": [5, 5],
+  "Liam": [8, 10],
+  "Olivia": [12, 15],
+  "Sofia": [10, 10]
 };
 
 
@@ -46,6 +46,25 @@ const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
     <div className="container mt-5">
       <h1 className="text-center">First Come First Serve Scheduling</h1>
       <hr />
+      <p>Scenario: Bank Teller Queue</p>
+      <p>At a local bank branch, there is one teller available for customer service. Customers arrive at different times and are served in the order they arrive — First-Come, First-Served (FCFS). Services vary in duration depending on customer needs like deposits, account issues, or loan queries.</p>
+      <p>Customers and Arrival Times</p>
+<p>Customer Arrival Time Service Duration</p>
+<ul>
+  <li>John	9:00 AM	20 minutes</li>
+  <li>Emma	9:05 AM	5 minutes</li>
+  <li>Liam	9:08 AM	10 minutes</li>
+  <li>Sofia 9:10 AM 10 minutes</li>
+  <li>Olivia	9:12 AM	15 minutes</li>
+</ul>
+<p>Applying FCFS</p>
+<ol>
+  <li>John arrives at 9:00 AM (0 minutes) and starts immediately. He finishes at 9:20 AM.</li>
+  <li>Emma arrives at 9:05 AM (5 minutes) but waits until John is done. She starts at 9:20 AM and finishes at 9:25 AM.</li>
+  <li>Liam arrives at 9:08 AM (8 minutes) but also waits for Emma. He starts at 9:25 AM and finishes at 9:35 AM.</li>
+  <li>Sophia arrives at 9:10 AM (10 minutes) and waits until Liam finishes. She starts at 9:35 AM and finishes at 9:45 AM.</li>
+  <li>Olivia arrives at 9:12 AM (12 minutes) and waits for Sophia. She starts at 9:45 AM and finishes at 10:00 AM.</li>
+</ol>
       <table className="table table-bordered table-secondary mt-4">
         <thead className="table-dark">
           <tr>
