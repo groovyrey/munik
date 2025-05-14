@@ -24,7 +24,7 @@ function Main() {
   const sortedPeople = Object.fromEntries(
   Object.entries(initialPeople).sort(([, a], [, b]) => a[0] - b[0])
 )
-  const [people, setPeople] = useState(sortedPeople);
+  const [people, setPeople] = useState(initialPeople);
   const [results, setResults] = useState(calculateFCFS(Object.entries(sortedPeople)));
 
   const handleChange = (name, field, value) => {
@@ -35,9 +35,11 @@ function Main() {
 
   const updateResults = () => {
 const toastLiveExample = document.getElementById('liveToast')
+const sortedPeople = Object.fromEntries(
+  Object.entries(people).sort(([, a], [, b]) => a[0] - b[0]))
 const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
     toastBootstrap.show()
-    setResults(calculateFCFS(Object.entries(people)));
+    setResults(calculateFCFS(Object.entries(sortedPeople)));
   };
 
   return (
