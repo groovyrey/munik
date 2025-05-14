@@ -44,7 +44,7 @@ const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
 
   return (
     <div className="container mt-5">
-      <h1 className="text-center">First Come First Serve Scheduling</h1>
+      <h1 className="p-10 text-light bg-primary rounded text-center">First Come First Serve Scheduling</h1>
       <hr />
       <p>Scenario: Bank Teller Queue</p>
       <p>At a local bank branch, there is one teller available for customer service. Customers arrive at different times and are served in the order they arrive — First-Come, First-Served (FCFS). Services vary in duration depending on customer needs like deposits, account issues, or loan queries.</p>
@@ -65,8 +65,8 @@ const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
   <li>Sophia arrives at 9:10 AM (10 minutes) and waits until Liam finishes. She starts at 9:35 AM and finishes at 9:45 AM.</li>
   <li>Olivia arrives at 9:12 AM (12 minutes) and waits for Sophia. She starts at 9:45 AM and finishes at 10:00 AM.</li>
 </ol>
-      <table className="table table-bordered table-secondary mt-4">
-        <thead className="table-dark">
+      <table className="table table-bordered mt-4">
+        <thead className="table-primary">
           <tr>
             <th>Process</th>
             <th>Arrival Time</th>
@@ -84,11 +84,11 @@ const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
         </tbody>
       </table>
       <div className="d-flex justify-content-center">
-      <button className="btn btn-success" onClick={updateResults}>Update Results</button>
+      <button className="btn btn-primary" onClick={updateResults}>Update Results</button>
       </div>
       <h1 className="text-center mt-4">Results:</h1>
-      <table className="table table-bordered table-secondary mt-4">
-        <thead className="table-dark">
+      <table className="table table-bordered mt-4">
+        <thead className="table-primary">
           <tr>
             <th>Process</th>
             <th>Arrival Time</th>
