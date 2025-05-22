@@ -8,14 +8,14 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	<title>Edit user</title>
+	<title>Muzon East</title>
 	<style type="text/css" media="all">
 	html{
 		padding: 0px;
 		margin: 0px;
 		width:100%;
 		height:100%;
-		background: url('assets/bg.jpeg');
+		background: url('');
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: contain;
@@ -25,6 +25,18 @@
 	}
 	body > *{
 		background: transparent;
+	}
+	#form {
+		background: url("assets/bg.jpeg");
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	#form input[type='text'], input[type="number"], input[type="password"]{
+		background: transparent;
+	}
+		#form input[type="text"]:focus {
+		background: white;
 	}
 	
 	    .back {
@@ -48,22 +60,7 @@
 			left: 0px;
 			margin: 10px;
 		}
-		.form .card-body{
-			background: white;
-			border: 0px solid black;
-			border-radius: 10px;
-			margin-top: 10px;
-			display: flex;
-			flex-direction: column;
-		}
 
-		.form select{
-			padding: 5px;
-			border-radius: 5px;
-		}
-		.form label{
-			margin: 5px;
-		}
 
 	</style>
 	<script>
@@ -80,10 +77,10 @@
 			if (changepass.value!=confirmpass.value||(!changepass.value||!confirmpass.value)){
 				alert('password do not match')
 			} else {
-				let text = `Saved edit: \nFirst name: ${fname.name}\nMiddle inital: ${mname.name}\nLast name: ${lname.value}\nStreet no. ${street.value}\nAddress State: ${state.value}\nAddress up: ${address.value}`
+				let text = `Info: \nFirst name: ${fname.value}\nMiddle inital: ${mname.value}\nLast name: ${lname.value}\nStreet no. ${street.value}\nAddress State: ${state.value}\nAddress up: ${address.value}`
 				const queueElement = document.getElementById('ready')
 				const now = new Date();
-				const time = now.toLocaleTimeString('en-US', {
+				const time = now.toLocaleTimeString('en-PH', {
 	hour: '2-digit',
 	minute: '2-digit',
 	hour12: true
@@ -96,7 +93,7 @@
 				body.className = "card-body text-bg-primary"
 				title.className = "card-title"
 				para.className = "card-text"
-				para.innerText = time
+				para.innerText = `at ${time}`
 				title.innerText = `${fname.value} ${lname.value}`
 				card.appendChild(body)
 				body.appendChild(title)
@@ -125,9 +122,9 @@
 		<button class="back" onclick="history.back()"><span class="bi-arrow-left"></span> Back to menu</button>
 		--->
 	</div>
-	<div class="card m-2 form bg-transparent">
-		<h2 class="card-header text-center"> <span class="bi-pencil-square"></span> Create ID</h2>
-		<div class="card-body">
+	<div id="form" class="card m-2 form bg-transparent">
+		<h2 class="card-header text-center bg-transparent"> <span class="bi-pencil-square"></span> Create ID</h2>
+		<div class="card-body bg-transparent">
 		<label>First Name: </label>
 		<input class="form-control" id="fname" type="text">
 		<label>Middle Initial: </label>
@@ -140,11 +137,11 @@
 		<input class="form-control" id="state" type="text">
 		<label>Address up: </label>
   <input class="form-control" id="address" type="text">
-  <label>Change password: </label>
+  <label>Create password: </label>
 <input class="form-control" id="changepass" type="password">
 <label>Confirm password: </label>
 <input class="form-control" id="confirmpass" type="password">
-		<button class="btn btn-success mt-3" onclick="submit()">Register <span class="bi-file-earmark-fill"></span></button>
+		<button class="w-100 btn btn-success mt-3" onclick="submit()">Register <span class="bi-file-earmark-fill"></span></button>
 		</div>
 	</div>
 	<div class="card m-2 bg-transparent" id="queue">
